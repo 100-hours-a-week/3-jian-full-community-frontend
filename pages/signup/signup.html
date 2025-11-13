@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>회원가입 | 아무 말 대잔치</title>
+  <link rel="stylesheet" href="signup.css" />
+</head>
+<body>
+  <header class="page-header">
+    <div class="header-inner">
+      <button class="back-btn">←</button>
+      <h1 class="page-title">아무 말 대잔치</h1>
+    </div>
+    <hr class="divider" />
+  </header>
+
+  <main class="signup-container">
+    <section class="signup-card">
+      <h2 class="signup-title">회원가입</h2>
+
+      <!-- 프로필 사진 업로드 -->
+      <div class="profile-section">
+        <label for="profile" class="profile-label">프로필 사진</label>
+        <p id="profile-helper-text" class="helper-text"></p>
+        <div class="profile-preview" id="profilePreview">
+          <span class="plus-icon">+</span>
+        </div>
+        <input type="file" id="profileImage" accept="image/*" hidden/>
+      </div>
+
+      <!-- 회원가입 폼 -->
+      <form id = "signupForm" class="signup-form">
+        <div class="form-group">
+          <label for="email">이메일*</label>
+          <input id="email" type="email" placeholder="이메일을 입력하세요" />
+          <p id="email-helper-text" class="helper-text"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="password">비밀번호*</label>
+          <input id="password" type="password" placeholder="비밀번호를 입력하세요" />
+          <p id="password-helper-text" class="helper-text"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">비밀번호 확인*</label>
+          <input id="confirm-password" type="password" placeholder="비밀번호를 한 번 더 입력하세요" />
+          <p id="confirm-password-helper-text" class="helper-text"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="nickname">닉네임*</label>
+          <input id="nickname" type="text" placeholder="닉네임을 입력하세요" />
+          <p id="nickname-helper-text" class="helper-text"></p>
+        </div>
+
+        <button type="submit" id="signup-btn" disabled>회원가입</button>
+        <button type="button" class="text-btn">로그인하러 가기</button>
+      </form>
+    </section>
+  </main>
+  <script type="module" src="./signup.js"></script>
+</body>
+</html>

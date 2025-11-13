@@ -1,0 +1,205 @@
+:root {
+  --primary: #aca0eb;
+  --primary-dark: #7f6aee;
+  --bg: #f4f5f7;
+  --text: #000;
+  --border: #000;
+}
+
+/* ---------------- 기본 세팅 ---------------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+}
+
+/* ---------------- 헤더 ---------------- */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px 40px;
+}
+
+.back-btn {
+  position: absolute;
+  left: 40px;
+  top: 24px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.page-title {
+  font-family: 'Sandoll GogoRound', sans-serif;
+  font-weight: 200;
+  font-size: 42px;
+  color: #111;
+}
+
+.profile-menu {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+}
+
+.profile-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+  background-color: #ddd;
+}
+
+.dropdown {
+  position: absolute;
+  top: 64px;
+  right: 0;
+  list-style: none;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 8px;
+  padding: 8px 0;
+  width: 160px;
+  display: none;
+  z-index: 1000;
+}
+
+.dropdown.show { display: block; }
+
+.dropdown li a {
+  display: block;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+}
+
+.dropdown li a:hover { background-color: var(--bg); }
+
+.divider {
+  width: 100%;
+  border: none;
+  border-top: 2px solid rgba(0,0,0,0.1);
+}
+
+/* ---------------- 게시글 수정 ---------------- */
+.post-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 16px;
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 제목 영역 */
+.post-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 120px;
+}
+
+.post-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* 폼 전체 */
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+}
+
+/* 각 그룹 */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px; /* ✅ 중앙 폭 제한 */
+}
+
+/* 라벨 */
+label {
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text);
+}
+
+/* 입력창 */
+input[type="text"],
+textarea {
+  width: 100%;
+  background-color: var(--bg);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 16px;
+  color: var(--text);
+  transition: box-shadow 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--primary);
+}
+
+/* 텍스트 영역 */
+textarea {
+  height: 200px;
+  resize: none;
+  line-height: 1.6;
+}
+
+.helper-text {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #FF3333;
+}
+
+/* 파일 업로드 */
+.file-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.file-name {
+  font-size: 15px;
+  color: #666;
+}
+
+/* 버튼 */
+.submit-btn {
+  margin-top: 20px;
+  width: 300px;         /* 🔹 고정된 가로 크기 */
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-dark);
+}

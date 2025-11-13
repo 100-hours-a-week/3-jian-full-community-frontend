@@ -1,0 +1,153 @@
+:root {
+  --primary: #ACA0EB;
+  --primary-dark: #7F6AEE;
+  --bg: #F4F5F7;
+  --text: #000000;
+  --border: #000000;
+}
+
+/* 전역 리셋 */
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+
+/* 전체를 세로 플렉스 레이아웃으로 */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: var(--bg);
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+}
+
+/* 🔹 상단 헤더 */
+.page-header {
+  text-align: center;
+}
+
+.page-title {
+  font-family: 'Sandoll GogoRound', sans-serif;
+  font-weight: 200;
+  font-style: normal;         /* "03 Rg"는 일반 Regular로 인식 */
+  font-size: 46px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+  color: #111;
+  margin: 0 0 16px 0;
+  margin-bottom: 24px;
+  color: #111;
+}
+
+/* 🔹 구분선 */
+.divider {
+  width: 100%;
+  margin: 0;
+  border: none;
+  border-top: 2px solid rgba(0, 0, 0, 0.1); /* 연한 회색 */
+}
+
+/* 가운데 정렬용 컨테이너 */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* 카드 본체 */
+.login-card {
+  border-radius: 16px;
+  padding: 48px 40px;        /* 내부 여백 증가 */
+  width: 620px;              /* 카드 크기 확장 (기존 392 → 440) */
+  text-align: center;        /* 제목 가운데 정렬 */
+}
+
+/* 제목 */
+.login-title {
+  font-weight: 700;
+  font-size: 42px;
+  margin-bottom: 100px;
+  white-space: nowrap;       /* “로그 인”으로 줄바꿈 방지 */
+}
+
+/* 입력 폼 */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  align-items: flex-start; /* 왼쪽 정렬 */
+  text-align: left;
+  width: 100%;
+}
+
+/* 라벨 */
+label {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px; /* 🔹라벨과 인풋 사이 간격 늘림 */
+}
+
+/* 인풋 */
+input {
+  width: 100%;
+  background-color: var(--bg);
+}
+
+input:focus {
+  border-color: #6a5acd;
+  outline: none;
+}
+
+.login-form input {
+  padding: 12px 14px;        /* 내부 여백 추가 */
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+/* ✅ 헬퍼 텍스트 */
+.helper-text {
+  margin-top: 6px;
+  margin-left: 4px;            /* 인풋과 간격 */
+  font-size: 16px;
+  color: #FF3333;                /* 기본은 회색 */
+  visibility: visible;        /* JS에서 토글 가능 */
+}
+
+/* 로그인 버튼 */
+.login-btn {
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* 회원가입 (텍스트 버튼) */
+.text-btn {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 4px; /* 약간 간격 주기 */
+}

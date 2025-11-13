@@ -1,0 +1,197 @@
+:root {
+  --primary: #ACA0EB;
+  --primary-dark: #7F6AEE;
+  --bg: #F4F5F7;
+  --text: #000000;
+  --border: #000000;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+}
+
+/* 헤더 */
+.page-header {
+  text-align: center;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  left: 32px;
+  top: 0;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.page-title {
+  font-family: 'Sandoll GogoRound', sans-serif;
+  font-weight: 200;
+  font-size: 46px;
+  color: #111;
+  margin: 24px 0;
+}
+
+.divider {
+  width: 100%;
+  border: none;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/* 중앙 정렬 컨테이너 */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+/* 카드 */
+.signup-card {
+  border-radius: 16px;
+  padding: 48px 40px;
+  width: 620px;
+  text-align: center;
+}
+
+/* 제목 */
+.signup-title {
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+/* 프로필 업로드 */
+.profile-section {
+  text-align: left;
+  margin-bottom: 32px;
+}
+
+.profile-label {
+  display: block;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.profile-preview {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: #ddd;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 8px;
+}
+
+.plus-icon {
+  font-size: 48px;
+  color: #777;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+/* 폼 */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.signup-form input {
+  padding: 12px 14px;        /* 내부 여백 추가 */
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+label {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  background-color: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 16px;
+}
+
+input:focus {
+  border-color: var(--primary-dark);
+  outline: none;
+  background-color: #fff;
+}
+
+/* ✅ 헬퍼 텍스트 */
+.helper-text {
+  margin-top: 6px;
+  margin-left: 4px;            /* 인풋과 간격 */
+  font-size: 16px;
+  color: #FF3333;                /* 기본은 회색 */
+  visibility: visible;        /* JS에서 토글 가능 */
+}
+
+/* 버튼 */
+#signup-btn {
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#signup-btn.active {
+  background-color: var(--primary-dark);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* 회원가입 (텍스트 버튼) */
+.text-btn {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 4px; /* 약간 간격 주기 */
+}

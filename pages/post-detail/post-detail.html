@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>게시글 상세 | 아무 말 대잔치</title>
+  <link rel="stylesheet" href="post-detail.css" />
+</head>
+
+<!-- ✅ 댓글 수정/삭제 확인 모달 -->
+<div class="modal" id="confirmModal">
+  <div class="modal-content">
+    <p id="modalMessage">정말 삭제하시겠습니까?</p>
+    <div class="modal-actions">
+      <button class="modal-cancel">취소</button>
+      <button class="modal-confirm">확인</button>
+    </div>
+  </div>
+</div>
+
+<body>
+  <header class="page-header">
+    <div class="header-inner">
+      <button class="back-btn">←</button>
+      <h1 class="page-title">아무 말 대잔치</h1>
+
+      <!-- 프로필 및 드롭다운 -->
+      <div class="profile-menu">
+        <img src="../../assets/default-profile.png" class="profile-icon" id="profileToggle" />
+        <ul class="dropdown" id="dropdownMenu">
+          <li><a href="#">회원정보수정</a></li>
+          <li><a href="#">비밀번호수정</a></li>
+          <li><a href="#">로그아웃</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="divider" />
+  </header>
+
+  <main class="post-container">
+    <!-- 제목 + 작성자 + 날짜 + 버튼 -->
+    <section class="post-header">
+      <div class="post-header-left">
+        <h2 class="post-title">제목 1</h2>
+        <div class="post-writer">
+          <div class="profile-circle"></div>
+          <span class="writer-name">더미 작성자 1</span>
+          <span class="post-date">2021-01-01 00:00:00</span>
+        </div>
+      </div>
+      <div class="post-header-right">
+        <button class="edit-btn">수정</button>
+        <button class="delete-btn">삭제</button>
+      </div>
+    </section>
+    <hr class="divider" />
+
+    <!-- 본문 -->
+    <section class="post-body">
+      <img src="../../assets/default-profile.png" alt="게시글 이미지" class="post-image" />
+      <p class="post-content">
+        무엇을 얘기할까요? 아무말이라면, 삶은 항상 놀라운 모험이라고 생각합니다. 우리는 매일 새로운 경험을 만들어...
+      </p>
+    </section>
+
+    <!-- 좋아요 / 조회수 / 댓글수 -->
+    <section class="post-stats">
+      
+    <div class="stat-box like-box">
+        <span class="like-count">0</span>
+        <span class="label">좋아요수</span>
+    </div>
+      <div class="stat-box">123<br /><span>조회수</span></div>
+      <div class="stat-box">123<br /><span>댓글수</span></div>
+    </section>
+    <hr class="divider" />
+
+    <!-- 모달 오버레이 -->
+    <div id="post-delete-modal" class="modal">
+      <div class="modal-content">
+        <h3>게시글을 삭제하시겠습니까?</h3>
+        <p>삭제한 내용은 복구할 수 없습니다.</p>
+        <div class="modal-actions">
+          <button id="post-delete-cancel-btn" class="btn cancel">취소</button>
+          <button id="post-delete-confirm-btn" class="btn confirm">확인</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+    <!-- 댓글 삭제 모달 -->
+    <div class="modal" id="comment-delete-modal">
+      <div class="modal-content">
+        <p>댓글을 삭제하시겠습니까?</p>
+        <div class="modal-actions">
+          <button class="modal-cancel" id="comment-delete-cancel">취소</button>
+          <button class="modal-confirm" id="comment-delete-confirm">삭제</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 댓글 입력 -->
+    <section class="comment-write">
+      <textarea placeholder="댓글을 남겨주세요!"></textarea>
+      <hr class="comment-divider" />
+      <button class="comment-submit">댓글 등록</button>
+    </section>
+
+    <!-- 댓글 목록 -->
+    <section class="comment-list">
+        <article class="comment-item">
+            <div class="comment-header">
+                <div class="comment-info">
+                    <div class="profile-circle"></div>
+                    <span class="comment-writer">더미 작성자 1</span>
+                    <span class="comment-date">2021-01-01 00:00:00</span>
+                </div>
+                    <div class="comment-actions">
+                    <button class="edit-btn">수정</button>
+                    <button class="delete-btn">삭제</button>
+                </div>
+            </div>
+
+            <p class="comment-content">댓글 내용</p>
+        </article>
+    </section>
+  </main>
+
+  <script>
+    // ✅ 드롭다운
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.getElementById("profileToggle");
+      const menu = document.getElementById("dropdownMenu");
+
+      toggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.toggle("show");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.remove("show");
+        }
+      });
+    });
+  </script>
+  <script type="module" src="./post-detail.js"></script>
+</body>
+</html>
